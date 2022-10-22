@@ -21,6 +21,9 @@ using namespace std;
             myString = str;
         }
 
+        //declare constructor
+        MyClass(int num);
+
         int myNum;
         string myString;
         void myMethod(){
@@ -29,6 +32,12 @@ using namespace std;
         void myNewMethod();
         void checkEven(int num);
     };
+
+    //constructor definition
+    MyClass::MyClass(int num){
+        myNum = num;
+    }
+
 
     //method definition outside class
     void MyClass::myNewMethod(){
@@ -39,6 +48,8 @@ using namespace std;
     void MyClass::checkEven(int num){
         cout << "checking even" << endl;
     }
+
+
 
 int main()
 {
@@ -69,5 +80,9 @@ int main()
 
     cout << obj1.myNum << " " << obj1.myString << endl;
     cout << obj2.myNum << " " << obj2.myString << endl;
+
+    //creating obj using constructor defined outside class
+    MyClass obj3(60);
+
 
 }
